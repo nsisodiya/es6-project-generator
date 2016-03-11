@@ -212,7 +212,7 @@ exec('git', ['add', 'dist/index.html']);
 
 console.log("All Files generated, now generating files");
 exec('webpack');
-exec('git', ['add', 'dist/es6Mixins.js']);
+exec('git', ['add', `dist/${config.browserName}.js`]);
 exec('git', ['add', 'dist/example.js']);
 
 console.log("Please run , following command to start the server");
