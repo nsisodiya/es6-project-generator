@@ -1,0 +1,13 @@
+{
+	"gitUser": "nsisodiya",
+	"author": "Narendra Sisodiya",
+	"email": "narendra@narendrasisodiya.com",
+	"nodeName": "es6-mixins",
+	"browserName": "es6Mixins",
+	"keywords": [
+		"es6",
+		"mixins"
+	],
+	"packageName": "@nsisodiya/es6-mixins",
+	"description": "ES6 Mixins, Useful for adding Mixin support to React Component when you use ES6 class syntax"
+}
