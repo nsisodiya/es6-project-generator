@@ -42,8 +42,7 @@ var packageJsonFile = `{
 		"test": "echo \\\"Error: no test specified\\\" && exit 1",
 		"watch": "webpack --watch &",
 		"server": "cd dist ; live-server",
-		"build": "npm run watch ; npm run server",
-		"prepublish": "webpack"
+		"build": "npm run watch ; npm run server"
 	},
 	"repository": {
 		"type": "git",
