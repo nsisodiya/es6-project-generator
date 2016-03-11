@@ -47,15 +47,15 @@ var packageJsonFile = `{
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/${config.gitUser}/${config.nodeName}.git"
+		"url": "git+https://github.com/${config.gitUser}/${config.gitRepoName}.git"
 	},
 	"keywords": ${JSON.stringify(config.keywords)},
 	"author": "${config.author} <${config.email}>",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/${config.gitUser}/${config.nodeName}/issues"
+		"url": "https://github.com/${config.gitUser}/${config.gitRepoName}/issues"
 	},
-	"homepage": "https://github.com/${config.gitUser}/${config.nodeName}#readme",
+	"homepage": "https://github.com/${config.gitUser}/${config.gitRepoName}#readme",
 	"devDependencies": {
 	}
 }
@@ -83,9 +83,9 @@ var webpackConfig = `module.exports = {
 		library: "[name]"
 	},
 	externals: {
-		"${config.nodeName}": {
-			commonjs: '${config.nodeName}',
-			commonjs2: '${config.nodeName}',
+		"${config.packageName}": {
+			commonjs: '${config.packageName}',
+			commonjs2: '${config.packageName}',
 			amd: '${config.browserName}',
 			root: '${config.browserName}'
 		}
@@ -107,7 +107,7 @@ fs.writeFileSync('webpack.config.js', webpackConfig);
 exec('git', ['add', 'webpack.config.js']);
 
 
-var readMeFile = `# ${config.nodeName}
+var readMeFile = `# ${config.packageName}
 ${config.description}
 
 # Installation
@@ -186,7 +186,7 @@ fs.writeFileSync('src/index.js', indexFile);
 exec('git', ['add', 'src/index.js']);
 
 
-var exampleFile = `import ${config.browserName} from '${config.nodeName}';
+var exampleFile = `import ${config.browserName} from '${config.packageName}';
 
 ${config.browserName}();`;
 exec('mkdir', ['example']);
